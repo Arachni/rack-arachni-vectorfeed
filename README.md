@@ -29,7 +29,7 @@ require 'rubygems'
 require 'sinatra'
 require 'sinatra/contrib'
 
-require 'rack/arachni_vectorfeed'
+require 'rack/arachni-vectorfeed'
 
 use Rack::ArachniVectorFeed, outfile: 'vectors.yml'
 
