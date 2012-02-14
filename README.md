@@ -9,7 +9,18 @@ in order to perform extremely focused audits or unit-tests.
 ### Gemfile
 
 ```ruby
-gem 'rack-arachni-vectorfeed', :git => 'git://github.com/Arachni/rack-arachni-vectorfeed.git'
+gem 'rack-arachni-vectorfeed',
+    :git => 'git://github.com/Arachni/rack-arachni-vectorfeed.git',
+    :require => 'rack/arachni-vectorfeed'
+```
+
+### Rails 3
+
+Once you have followed the instructions for Gemfile installation you can then
+choose an environment and add the following to its configuration:
+
+```ruby
+config.middleware.use Rack::ArachniVectorFeed, outfile: 'vectors.yml'
 ```
 
 ### Source
