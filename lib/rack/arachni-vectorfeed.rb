@@ -16,6 +16,7 @@
 
 require 'rack/utils'
 require 'yaml'
+require 'digest/md5'
 # require 'ap'
 
 module Rack
@@ -32,31 +33,42 @@ module Rack
         end
 
         def call( env )
-            # ap env
-
-            extract_vectors( env ).each {
-                |vector|
-                if !@vectors.include? vector
-                    @vectors << vector
-                    append_to_outfile( vector )
-                end
-            }
+            extract_vectors( env ).each { |vector| append_to_outfile( vector ) }
 
             # forward the request up to the app
-            @app.call( env )
+            code, headers, body = @app.call( env )
+
+            append_to_outfile( extract_page( env, code, headers, body ) )
+
+            [ code, headers, body ]
         end
 
         private
 
         def append_to_outfile( vector )
+            digest = Digest::MD5.hexdigest( vector.to_s )
+            return if @vectors.include? digest
+
             ::File.open( @opts[:outfile], 'a' ) do |out|
                 YAML.dump( [vector], out )
             end
+
+            @vectors << digest
         end
 
         def extract_vectors( env )
             [extract_cookies( env ), extract_headers( env ),
             extract_forms( env ), extract_links( env ) ].flatten.compact
+        end
+
+        def extract_page( env, code, headers, body )
+            {
+                'type'    => 'page',
+                'url'     => vector_tpl( env )['action'],
+                'code'    => code,
+                'headers' => headers.to_hash,
+                'body'    => body.join( "\n" )
+            }
         end
 
         def extract_links( env )

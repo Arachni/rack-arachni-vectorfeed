@@ -142,7 +142,7 @@ get "/audit" do
     <h3>Why?</h3>
     <p>
         <ol>
-            <li>We only use the XSS module because this is a demo.</li>
+            <li>We only use the XSS module because this is a demo. Under real world scenarios use: <pre>audit/*,grep/*</pre></li>
             <li>We set the <em>link-count</em> limit to <em>0</em> to prevent Arachni
                 from crawling and only audit the stuff passed to it by the VectorFeed plug-in.</li>
             <li>We set the <em>http-req-limit</em> to <em>1</em> to throttle Arachni down since you'll
