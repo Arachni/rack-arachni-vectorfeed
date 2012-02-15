@@ -15,7 +15,14 @@
 =end
 
 require 'rubygems'
-require 'arachni/rpc/pure'
+
+begin
+    require 'arachni/rpc/pure'
+rescue LoadError
+    puts 'You need the arachni-rpc-pure gem to run this script, install it using:'
+    puts '    gem install arachni-rpc-pure'
+    exit
+end
 
 # serialized vectors as dumped by the ArachniVectorFeed middleware
 VECTOR_FILE = File.expand_path( File.dirname( __FILE__ ) ) + '/vectors.yml'
