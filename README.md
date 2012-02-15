@@ -33,6 +33,10 @@ rake install
 
 ## Example
 
+Run the script <em>examples/server.rb</em> to see this working live.
+
+### Quickie
+
 You can use it in any Rack-based app like so:
 
 ```ruby
