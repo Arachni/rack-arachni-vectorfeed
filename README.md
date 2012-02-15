@@ -45,6 +45,7 @@ choose an environment and add the following to its configuration:
 config.middleware.use Rack::ArachniVectorFeed, outfile: 'vectors.yml'
 ```
 
+(Obviously not suitable for <em>production</em>.)
 
 ## Usage
 
