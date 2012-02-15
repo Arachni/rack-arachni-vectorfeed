@@ -33,9 +33,9 @@ rake install
 
 ## Usage
 
-The main idea behind this is to lead to security Unit-testing using [Arachni](http://arachni-scanner.com) and its VectorFeed plug-in.
+The main idea behind this is to lead to security Unit-testing using Arachni and its VectorFeed plug-in.
 
-For example, you can configure your Rails test environment to use this midleware
+For example, you can configure your Rails test environment to use this middleware
 and then run your tests as usual.<br/>
 This time though, once the tests finish you'll be left with a YAML file containing
 all the HTTP inputs that were used in those tests.

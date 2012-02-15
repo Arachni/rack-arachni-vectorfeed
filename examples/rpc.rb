@@ -17,7 +17,7 @@
 require 'rubygems'
 require 'arachni/rpc/pure'
 
-# serialized vectors as dumped by the ArachniVectorFeed midleware
+# serialized vectors as dumped by the ArachniVectorFeed middleware
 VECTOR_FILE = File.expand_path( File.dirname( __FILE__ ) ) + '/vectors.yml'
 
 # dispatcher options
