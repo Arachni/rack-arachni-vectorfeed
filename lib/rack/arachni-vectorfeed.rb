@@ -112,8 +112,8 @@ module Rack
         def vector_tpl( env )
             vector = {
                 'method' => env['REQUEST_METHOD'].downcase,
-                'action' => env['rack.url_scheme'] + '//' + env['REMOTE_ADDR'] +
-                    ':' + env['SERVER_PORT'] + env['REQUEST_URI']
+                'action' => env['rack.url_scheme'] + '//' + env['HTTP_HOST'] +
+                    env['REQUEST_URI']
             }
         end
 
