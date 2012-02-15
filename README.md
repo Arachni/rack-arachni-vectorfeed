@@ -1,7 +1,7 @@
 # Rack::ArachniVectorFeed middleware
 
 Extracts input (link, form, cookie, header) vectors/params from HTTP requests
-and exports them in a suitable format for use with [Arachni](http://arachni-scanner.com)'s VectorFeed plug-in
+and exports them in a suitable format for use with [Arachni](http://arachni-scanner.com)'s [VectorFeed](https://github.com/Zapotek/arachni/blob/experimental/plugins/vector_feed.rb) plug-in
 in order to perform extremely focused audits or unit-tests.
 
 ## Installation
@@ -44,7 +44,7 @@ config.middleware.use Rack::ArachniVectorFeed, outfile: 'vectors.yml'
 
 ## Usage
 
-The main idea behind this is to lead to security Unit-testing using Arachni and its VectorFeed plug-in.
+The main idea behind this is to lead to security Unit-testing using [Arachni](http://arachni-scanner.com) and its [VectorFeed](https://github.com/Zapotek/arachni/blob/experimental/plugins/vector_feed.rb) plug-in.
 
 For example, you can configure your Rails test environment to use this middleware
 and then run your tests as usual.<br/>
