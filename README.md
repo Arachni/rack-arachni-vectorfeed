@@ -6,6 +6,8 @@ in order to perform extremely focused audits or unit-tests.
 
 Or, if you want to go the other way, you can use that data to further the audit/scan coverage instead of restricting it.
 
+**The VectorFeed plug-in is currently oncly available in Arachni's [experimental](https://github.com/Zapotek/arachni/tree/experimental) branch.**
+
 ## Installation
 
 ### Gemfile
