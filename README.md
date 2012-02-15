@@ -4,6 +4,8 @@ Extracts input (link, form, cookie, header) vectors/params from HTTP requests
 and exports them in a suitable format for use with [Arachni](http://arachni-scanner.com)'s [VectorFeed](https://github.com/Zapotek/arachni/blob/experimental/plugins/vector_feed.rb) plug-in
 in order to perform extremely focused audits or unit-tests.
 
+Or, if you want to go the other way, you can use that data to further the audit/scan coverage instead of restricting it.
+
 ## Installation
 
 ### Gemfile
