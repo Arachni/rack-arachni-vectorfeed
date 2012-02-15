@@ -66,7 +66,7 @@ Like so:
 arachni <url> --plugin=vector_feed:yaml_file='<vectors file>' -m audit/*,grep/* --link-count=0
 ```
 
-This will load all <em>audit</em> and <em>grep</em> modules and attacks the extracted vectors while skipping the crawl.
+This will load all <em>audit</em> and <em>grep</em> modules and attack the extracted vectors (and grep the HTML bodies) while skipping the crawl.
 
 If you want to automate the process you can:
 
