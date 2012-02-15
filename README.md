@@ -14,6 +14,24 @@ gem 'rack-arachni-vectorfeed',
     :require => 'rack/arachni-vectorfeed'
 ```
 
+### Source
+
+```
+git clone git://github.com/Arachni/rack-arachni-vectorfeed.git
+cd rack-arachni-vectorfeed
+rake install
+```
+
+## Configuration
+
+### Any Rack-based application
+
+Simple as:
+
+```ruby
+use Rack::ArachniVectorFeed, outfile: 'vectors.yml'
+```
+
 ### Rails 3
 
 Once you have followed the instructions for Gemfile installation you can then
@@ -23,13 +41,6 @@ choose an environment and add the following to its configuration:
 config.middleware.use Rack::ArachniVectorFeed, outfile: 'vectors.yml'
 ```
 
-### Source
-
-```
-git clone git://github.com/Arachni/rack-arachni-vectorfeed.git
-cd rack-arachni-vectorfeed
-rake install
-```
 
 ## Usage
 
@@ -67,7 +78,7 @@ instead of restricting it -- that depends on what you want.
 
 ## Example
 
-Run the script <em>examples/server.rb</em> to see this working live.
+Run the script <em>examples/server.rb</em> to see this working live -- you should :).
 
 ### Quickie
 
