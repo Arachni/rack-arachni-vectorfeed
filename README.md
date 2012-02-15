@@ -70,7 +70,7 @@ If you want to automate the process you can:
 * once they finish use the RPC interface to automate the scan (see <em>examples/rpc.rb</em>)
 * integrate the results of the audit back to the test suite
 
-As you can seem this is still a very young project and still quite abstract.
+As you can see this is still a very young project and still quite abstract.
 
 **Note**: Of course, you can use the VectorFeed plug-in to extend the audit
 instead of restricting it -- that depends on what you want.
