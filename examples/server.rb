@@ -137,14 +137,16 @@ get "/audit" do
     url = env['rack.url_scheme'] + '://' + env['HTTP_HOST']
     show <<EOHTML
     <h2>Feed the vectors to Arachni</h2>
-    <pre>arachni #{url} --plugin=vector_feed:yaml_file='#{cwd + VECTORS_FILE}' -m xss --link-count=0</pre>
+    <pre>arachni #{url} --plugin=vector_feed:yaml_file='#{cwd + VECTORS_FILE}' -m xss --link-count=0 --http-req-limit=1</pre>
 
     <h3>Why?</h3>
     <p>
         <ol>
             <li>We only use the XSS module because this is a demo.</li>
             <li>We set the <em>link-count</em> limit to <em>0</em> to prevent Arachni
-            from crawling and only audit the stuff passed to it by the VectorFeed plug-in.</li>
+                from crawling and only audit the stuff passed to it by the VectorFeed plug-in.</li>
+            <li>We set the <em>http-req-limit</em> to <em>1</em> to throttle Arachni down since you'll
+                probably been scanning <em>localost</em>.</li>
         </ol>
     </p>
 EOHTML
