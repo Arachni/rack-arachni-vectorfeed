@@ -33,7 +33,7 @@ rake install
 
 ## Usage
 
-The main idea behind this is to lead to security Unit-testing using Arachni and its VectorFeed plug-in.
+The main idea behind this is to lead to security Unit-testing using [Arachni](http://arachni-scanner.com) and its VectorFeed plug-in.
 
 For example, you can configure your Rails test environment to use this midleware
 and then run your tests as usual.<br/>
@@ -54,7 +54,7 @@ This will load all audit modules and attack the extracted vectors while skipping
 
 If you want to automate the process you can:
 
-* start-up an Arachni Dispatcher
+* start-up an [Arachni Dispatcher](http://arachni-scanner.com/wiki/RPC-server)
 * run the tests
 * once they finish use the RPC interface to automate the scan (see <em>examples/rpc.rb</em>)
 * integrate the results of the audit back to the test suite
